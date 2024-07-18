@@ -1,5 +1,5 @@
 import { redisClient } from "..";
-import { ALLOWED_SYMBOL } from "../constant";
+import { ALLOWED_SYMBOL, URL_PATH_LENGTH } from "../constant";
 import AppError from "../utils/app-error";
 
 export async function createShortUrl(url: string) {
@@ -24,7 +24,7 @@ export async function getUrl(shorterUrl: string) {
 
 function getUniqueSuffix() {
   let suffix = "";
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < URL_PATH_LENGTH; i++) {
     suffix += ALLOWED_SYMBOL[Math.floor(Math.random() * ALLOWED_SYMBOL.length)];
   }
   return suffix;

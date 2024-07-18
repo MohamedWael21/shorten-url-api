@@ -64,3 +64,4 @@ export const ALLOWED_SYMBOL = [
   "_",
   "-",
 ];
+export const URL_PATH_LENGTH = 5;
